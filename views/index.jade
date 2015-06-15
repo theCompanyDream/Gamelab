@@ -2,4 +2,5 @@ extends layout
 
 block content
 	div(ng-repeat= "TicTacModule")
-		h1 This is TicTacToe
+		button(onclick=executeValue) {{tictac.player}}
+	button(id=NewGameButton) NewGame
