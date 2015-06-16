@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+.tiledesgn button {
+	width: 30px;
+	height: 30px;
+}

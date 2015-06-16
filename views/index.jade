@@ -1,6 +1,13 @@
-extends layout
-
-block content
-	div(ng-repeat= "TicTacModule")
-		button(onclick=executeValue) {{tictac.player}}
-	button(id=NewGameButton) NewGame
+doctype html
+html(ng-app='tictactoeapp')
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js')
+		script(src='/js/controller.js')
+	body(ng-controller="ttListCtrl")
+		h1 Tic Tac Toe Application
+		section( class="tiledesgn")
+			button(ng-repeat= "tile in tiles", ng-click="assignValue(tile)") {{tile.value}}
+		button NewGame
+		h2 {{status}}
