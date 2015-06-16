@@ -9,5 +9,5 @@ html(ng-app='tictactoeapp')
 		h1 Tic Tac Toe Application
 		section( class="tiledesgn")
 			button(ng-repeat= "tile in tiles", ng-click="assignValue(tile)") {{tile.value}}
-		button NewGame
+		button(ng-click="createNewGame()") NewGame
 		h2 {{status}}

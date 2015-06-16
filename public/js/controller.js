@@ -11,7 +11,6 @@ tictactoeapp.controller('ttListCtrl', function($scope){
 	$scope.status = 'You Win';
 
 	$scope.assignValue = function (tile){
-
 		if(tile.value != $scope.defaultValue)
 			return;
 
@@ -23,12 +22,23 @@ tictactoeapp.controller('ttListCtrl', function($scope){
     	tile.value = $scope.tictacchars[$scope.currentTurn];
 	}
 
-	for(var i=0; i < tiles; i++)
+	$scope.determineWin = function()
 	{
-		$scope.tiles.push({ 
-				'value' : $scope.defaultValue, 
-			    'currentPosition': i
-			});
+
 	}
+
+	$scope.createNewGame = function()
+	{
+		$scope.tiles = [];
+
+		for(var i=0; i < tiles; i++)
+		{
+			$scope.tiles.push({ 
+					'value' : $scope.defaultValue, 
+				    'currentPosition': i
+				});
+		}
+	}
+	//creates theboxes
 
 });
