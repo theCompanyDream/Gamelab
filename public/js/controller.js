@@ -31,7 +31,7 @@ tictactoeapp.controller('ttListCtrl', function($scope){
     	tile.hasbeenset = true;
     	$scope.turnsRemaining+=1;
 
-    	if($scope.turnsRemaining > 5)
+    	if($scope.turnsRemaining >= 5)
     	{
     		var result = checkifArrayisEqual($scope.HorizontalArray, $scope.tiles);
 			var result2 = checkifArrayisEqual($scope.DiagnalArrays, $scope.tiles);
@@ -93,17 +93,20 @@ tictactoeapp.controller('ttListCtrl', function($scope){
 
 function checkifArrayisEqual(array, plane)
 {
+	console.log(plane);
 	for(var i =0; i < array.length; i++)
 	{
+
 		var tmparray = array[i];
+		console.log(tmparray);
 		var tmp = plane[tmparray[0]].player;
 
 		for(var j = 1; j < tmparray.length; j++)
 		{
 			var comparedvalue = plane[tmparray[j]];
-			console.log(comparedvalue.player + " vs " + tmp + " is equal to " + comparedvalue.hasbeenset);
+			console.log(comparedvalue.player + " vs " + tmp + " is equal to " + !comparedvalue.hasbeenset);
 
-			if(comparedvalue.player != tmp  && !comparedvalue.hasbeenset)
+			if(comparedvalue.player.localeCompare(tmp) != 0 && !comparedvalue.hasbeenset)
 			{
 				console.log("i returned false");
 				return false;
