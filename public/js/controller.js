@@ -16,7 +16,7 @@ tictactoeapp.controller('ttListCtrl', function($scope){
 	$scope.currentTurn = 0;
 	$scope.status = '';
 	$scope.turnsRemaining =0;
-	$scope.isDisabled = false;
+	$scope.IsOver = false;
 
 	$scope.assignValue = function (tile){
 		if(tile.player != $scope.defaultValue)
@@ -41,13 +41,13 @@ tictactoeapp.controller('ttListCtrl', function($scope){
 
 			if(result || result2 || result3)
 			{
+				$scope.IsOver = true;
 				$scope.status = tile.player + " Wins";
-				$scope.isDisabled = "disabled";
 			}
 			else if($scope.turnsRemaining == $scope.tileNumber)
 			{
+				$scope.IsOver = true;
 				$scope.status = "Tie Game";
-				$scope.isDisabled = "disabled";
 			}
     	}
 	}
@@ -57,7 +57,7 @@ tictactoeapp.controller('ttListCtrl', function($scope){
 		$scope.tiles = [];
 		$scope.turnsRemaining = 0;
 		$scope.status = "";
-		$scope.isDisabled = false;
+		$scope.IsOver = false;
 
 		for(var i=0; i < $scope.tileNumber; i++)
 		{
@@ -125,18 +125,15 @@ function checkifArrayisEqual(array, plane)
 		for(var j = 1; j < array.data.length; j++)
 		{
 			var comparedvalue = plane[array.data[j]];
-			console.log(comparedvalue.player + " vs " + tmp.player + " is equal to " + comparedvalue.hasbeenset);
 
 			if(comparedvalue.player.localeCompare(tmp.player) != 0 || !comparedvalue.hasbeenset)
 			{
-				console.log("i returned false");
 				istrue = false;
 			}			
 		}
 	}
 	else
 	{
-		console.log("First node hasn't been clicked");
 		istrue = false;
 	}
 

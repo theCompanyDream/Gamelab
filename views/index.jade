@@ -7,7 +7,7 @@ html(ng-app='tictactoeapp')
 		script(src='/js/controller.js')
 	body(ng-controller="ttListCtrl")
 		h1 Tic Tac Toe Application
-		section( class="tiledesgn")
-			button(ng-repeat= "tile in tiles", ng-click="assignValue(tile)", ng-disabled = "{{isDisabled}}") {{tile.player}}
+		section(class="tiledesgn")
+			button(ng-repeat= "tile in tiles", ng-click="assignValue(tile)", ng-disabled="IsOver") {{tile.player}}
 		button(ng-click="createNewGame()") NewGame
 		h2 {{status}}
