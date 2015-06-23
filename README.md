@@ -14,6 +14,9 @@
 		navigate to the folder where you've install the site
 	</li>
 	<li>
+		Type the command: npm install
+	</li>
+	<li>
 		Type the command gulp
 	</li>
 	<li>
@@ -21,5 +24,18 @@
 	</li>
 	<li>
 		Upon request I can send you the html file + javascript 
+	</li>
+</ul>
+
+<h2>Or say Tim this is silly </h2> 
+<ul>
+	<li>
+		download <a href="https://nodejs.org/">Node.js</a> from the site <a href="https://nodejs.org/">direct link</a>
+	</li>
+	<li>
+		Install node js
+	</li>
+	<li>
+	run TicTac.bat file
 	</li>
 </ul>
