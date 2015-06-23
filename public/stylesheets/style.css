@@ -11,3 +11,8 @@ a {
 	width: 30px;
 	height: 30px;
 }
+
+section.tiledesgn {
+	width: 100px;
+	margin-bottom: 20px;
+}

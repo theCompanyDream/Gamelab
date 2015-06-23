@@ -42,15 +42,14 @@ tictactoeapp.controller('ttListCtrl', function($scope){
 			if(result || result2 || result3)
 			{
 				$scope.status = tile.player + " Wins";
-				$scope.isDisabled = true;
+				$scope.isDisabled = "disabled";
 			}
 			else if($scope.turnsRemaining == $scope.tileNumber)
 			{
 				$scope.status = "Tie Game";
-				$scope.isDisabled = true;
+				$scope.isDisabled = "disabled";
 			}
     	}
-
 	}
 
 	$scope.createNewGame = function()
@@ -69,22 +68,38 @@ tictactoeapp.controller('ttListCtrl', function($scope){
 		}
 
 		//This is how you get away with doing a nested array without people hating you :)
-		$scope.HorizontalArray = [
-			[0,1,2],
-			[3,4,5],
-			[6,7,8]
-		];
+		$scope.HorizontalArray = 
+		{
+			data: [0,1,2],
+			next: {
+				data: [3,4,5],
+				next: {
+					data: [6,7,8],
+					next: null
+				}
+			}
+		};
 
-		$scope.VerticalArrays = [
-			[0,3,6],
-			[1,4,7],
-			[2,5,8]
-		];
+		$scope.VerticalArrays = 
+		{
+			data: [0,3,6],
+			next: {
+				data: [1,4,7],
+				next: {
+					data: [2,5,8],
+					next: null
+				}
+			}
+		};
 
-		$scope.DiagnalArrays = [
-			[0,4,8],
-			[2,4,6]
-		];
+		$scope.DiagnalArrays = 
+		{
+			data: [0,4,8],
+			next: {
+				data: [2,4,6],
+				next: null
+			}
+		};
 
 	}
 	//creates theboxes
@@ -93,28 +108,40 @@ tictactoeapp.controller('ttListCtrl', function($scope){
 
 function checkifArrayisEqual(array, plane)
 {
-	console.log(plane);
-	for(var i =0; i < array.length; i++)
+	console.log("I run");
+	var istrue = true;
+
+	if(array == null)
 	{
+		console.log("Null node");
+		return false;
+	}
 
-		var tmparray = array[i];
-		console.log(tmparray);
-		var tmp = plane[tmparray[0]].player;
+	console.log(array.data);
+	var tmp = plane[array.data[0]];
 
-		for(var j = 1; j < tmparray.length; j++)
+	if(tmp.hasbeenset)
+	{
+		for(var j = 1; j < array.data.length; j++)
 		{
-			var comparedvalue = plane[tmparray[j]];
-			console.log(comparedvalue.player + " vs " + tmp + " is equal to " + !comparedvalue.hasbeenset);
+			var comparedvalue = plane[array.data[j]];
+			console.log(comparedvalue.player + " vs " + tmp.player + " is equal to " + comparedvalue.hasbeenset);
 
-			if(comparedvalue.player.localeCompare(tmp) != 0 && !comparedvalue.hasbeenset)
+			if(comparedvalue.player.localeCompare(tmp.player) != 0 || !comparedvalue.hasbeenset)
 			{
 				console.log("i returned false");
-				return false;
+				istrue = false;
 			}			
 		}
-
 	}
-	return true;
+	else
+	{
+		console.log("First node hasn't been clicked");
+		istrue = false;
+	}
+
+	return istrue || checkifArrayisEqual(array.next, plane);
+
 }
 
 
