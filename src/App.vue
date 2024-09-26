@@ -1,7 +1,3 @@
-<script setup>
-import TicTac from './components/TicTac.vue'
-</script>
-
 <template>
   <header>
     <a href="https://vitejs.dev" target="_blank">
@@ -11,15 +7,14 @@ import TicTac from './components/TicTac.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </header>
-  <TicTac msg="Vite + Vue" />
+  <router-view />
 </template>
 
 <script>
-import TicTac from './components/TicTac.vue';
 
 export default {
     components: {
-        TicTac,
+        name: "App"
     },
 };
 </script>

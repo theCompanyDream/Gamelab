@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <main>
         <h1>Tic Tac Toe</h1>
-        <main id="board">
+        <section id="board">
             <div
                 v-for="(cell, index) in board"
                 :key="index"
@@ -10,11 +10,11 @@
             >
                 {{ cell }}
             </div>
-        </main>
-        <button @click="resetGame">Reset</button>
+        </section>
+        <button className="m-4" @click="resetGame">Reset</button>
         <p v-if="winner">Winner: {{ winner }}</p>
         <p v-if="isDraw && !winner">It's a draw!</p>
-    </div>
+    </main>
 </template>
 
 <script>
