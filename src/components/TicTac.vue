@@ -1,4 +1,3 @@
-<!-- src/TicTacToe.vue -->
 <template>
     <div>
         <h1>Tic Tac Toe</h1>
@@ -31,12 +30,64 @@ export default {
     methods: {
         makeMove(index) {
             if (this.board[index] === '' && !this.winner) {
-                this.board[index] = this.currentPlayer; // Direct assignment
+                this.board[index] = this.currentPlayer;
                 this.checkForWinner();
                 this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+                if (!this.winner && !this.isDraw) {
+                    this.computerMove();
+                }
             }
         },
-        checkForWinner() {
+        computerMove() {
+            const bestMove = this.minimax(this.board, this.currentPlayer);
+            this.board[bestMove.index] = this.currentPlayer;
+            this.checkForWinner();
+            this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+        },
+        minimax(board, player) {
+            const scores = {
+                'X': 1,
+                'O': -1,
+                'draw': 0,
+            };
+
+            // Check for terminal state
+            const winner = this.checkWinner(board);
+            if (winner) {
+                return { score: scores[winner] };
+            }
+
+            const availableMoves = board.map((cell, index) => (cell === '' ? index : null)).filter(index => index !== null);
+            let bestMove;
+
+            if (player === 'X') {
+                let bestScore = -Infinity; // Maximize for X
+                for (const move of availableMoves) {
+                    board[move] = player; // Make the move
+                    const score = this.minimax(board, 'O').score; // Recursively call minimax
+                    board[move] = ''; // Undo the move
+
+                    if (score > bestScore) {
+                        bestScore = score;
+                        bestMove = { index: move, score: bestScore };
+                    }
+                }
+            } else {
+                let bestScore = Infinity; // Minimize for O
+                for (const move of availableMoves) {
+                    board[move] = player; // Make the move
+                    const score = this.minimax(board, 'X').score; // Recursively call minimax
+                    board[move] = ''; // Undo the move
+
+                    if (score < bestScore) {
+                        bestScore = score;
+                        bestMove = { index: move, score: bestScore };
+                    }
+                }
+            }
+            return bestMove;
+        },
+        checkWinner(board) {
             const winningConditions = [
                 [0, 1, 2],
                 [3, 4, 5],
@@ -50,14 +101,22 @@ export default {
 
             for (const condition of winningConditions) {
                 const [a, b, c] = condition;
-                if (this.board[a] && this.board[a] === this.board[b] && this.board[a] === this.board[c]) {
-                    this.winner = this.board[a];
-                    return;
+                if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                    return board[a]; // Return winner ('X' or 'O')
                 }
             }
 
-            if (!this.board.includes('')) {
-                this.isDraw = true;
+            if (!board.includes('')) {
+                return 'draw';
+            }
+
+            return null; // No winner yet
+        },
+        checkForWinner() {
+            const winner = this.checkWinner(this.board);
+            if (winner) {
+                this.winner = winner === 'draw' ? null : winner;
+                this.isDraw = winner === 'draw';
             }
         },
         resetGame() {
