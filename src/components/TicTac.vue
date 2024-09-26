@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <main>
         <h1>Tic Tac Toe</h1>
         <div id="board">
             <div
@@ -14,7 +14,7 @@
         <button @click="resetGame">Reset</button>
         <p v-if="winner">Winner: {{ winner }}</p>
         <p v-if="isDraw && !winner">It's a draw!</p>
-    </div>
+    </main>
 </template>
 
 <script>
