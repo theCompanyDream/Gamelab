@@ -1,41 +1,5 @@
+# TicTacToe
 
-<h2>Steps to get it set up</h2>
-<ul>
-	<li>
-		download <a href="https://nodejs.org/">Node.js</a> from the site <a href="https://nodejs.org/">direct link</a>
-	</li>
-	<li>
-		Install node js
-	</li>
-	<li>
-		Open Terminal
-	</li>
-	<li>
-		navigate to the folder where you've install the site
-	</li>
-	<li>
-		Type the command: npm install
-	</li>
-	<li>
-		Type the command gulp
-	</li>
-	<li>
-		View the site
-	</li>
-	<li>
-		Upon request I can send you the html file + javascript 
-	</li>
-</ul>
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-<h2>Or say Tim this is silly </h2> 
-<ul>
-	<li>
-		download <a href="https://nodejs.org/">Node.js</a> from the site <a href="https://nodejs.org/">direct link</a>
-	</li>
-	<li>
-		Install node js
-	</li>
-	<li>
-	run TicTac.bat file
-	</li>
-</ul>
+Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
