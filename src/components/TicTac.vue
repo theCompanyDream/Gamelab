@@ -1,7 +1,7 @@
 <template>
     <main>
         <h1>Tic Tac Toe</h1>
-        <div id="board">
+        <section id="board">
             <div
                 v-for="(cell, index) in board"
                 :key="index"
@@ -10,8 +10,8 @@
             >
                 {{ cell }}
             </div>
-        </div>
-        <button @click="resetGame">Reset</button>
+        </section>
+        <button className="m-4" @click="resetGame">Reset</button>
         <p v-if="winner">Winner: {{ winner }}</p>
         <p v-if="isDraw && !winner">It's a draw!</p>
     </main>
@@ -34,7 +34,7 @@ export default {
                 this.checkForWinner();
                 this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
                 if (!this.winner && !this.isDraw) {
-                    this.computerMove();
+                    setTimeout(this.computerMove, 400)
                 }
             }
         },
