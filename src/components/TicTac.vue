@@ -1,6 +1,6 @@
 <template>
     <main>
-        <h1>Tic Tac Toe</h1>
+        <h1 className="text-center text-2xl m-3 font-bold">Tic Tac Toe</h1>
         <section id="board">
             <div
                 v-for="(cell, index) in board"
@@ -10,10 +10,10 @@
             >
                 {{ cell }}
             </div>
+            <button className="m-4 bg-purple-300 border-black" @click="resetGame">Reset</button>
+            <p v-if="winner">Winner: {{ winner }}</p>
+            <p v-if="isDraw && !winner">It's a draw!</p>
         </section>
-        <button className="m-4" @click="resetGame">Reset</button>
-        <p v-if="winner">Winner: {{ winner }}</p>
-        <p v-if="isDraw && !winner">It's a draw!</p>
     </main>
 </template>
 
@@ -135,6 +135,14 @@ export default {
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
     gap: 5px;
+    margin: 0 auto; /* Centers the board horizontally */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Ensures elements like the heading and button are stacked */
 }
 
 .cell {
