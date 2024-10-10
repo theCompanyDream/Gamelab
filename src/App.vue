@@ -5,7 +5,7 @@
     </header>
     <router-view />
     <footer class="bg-gray-800 text-white p-4 text-center">
-              &copy; 2024 GameLab. All rights reserved.
+      &copy; 2024 GameLab. All rights reserved.
     </footer>
   </article>
 </template>

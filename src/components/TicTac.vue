@@ -22,7 +22,7 @@ export default {
     data() {
         return {
             board: Array(9).fill(''),
-            currentPlayer: 'X',
+            currentPlayer: 'O',
             winner: null,
             isDraw: false,
         };
@@ -121,7 +121,7 @@ export default {
         },
         resetGame() {
             this.board = Array(9).fill('');
-            this.currentPlayer = 'X';
+            this.currentPlayer = 'O';
             this.winner = null;
             this.isDraw = false;
         },
