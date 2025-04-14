@@ -6,6 +6,11 @@ const routes = [
         name: 'TicTac',
         component: () => import('./TicTac.vue'), // Lazy-loaded component
     },
+    {
+        path: '/rock',
+        name: 'rockPaperScissors',
+        component: () => import('./RockPaperScssors.vue')
+    }
 ];
 
 const router = createRouter({
