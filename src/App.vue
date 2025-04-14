@@ -1,6 +1,6 @@
 <template>
   <article class="flex flex-col min-h-screen justify-between">
-    <header class="bg-blue-600 text-white p-4">
+    <header class="bg-red-500 text-white p-4">
       <div class="flex items-center justify-between">
         <!-- Left side: Title -->
         <router-link to="/" class="text-3xl font-bold text-white">GameLab</router-link>
