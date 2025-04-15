@@ -13,6 +13,12 @@
           >
             Rock Paper Scissors
           </router-link>
+          <router-link
+            to="/pong"
+            class="text-white hover:underline hover:text-gray-200 transition"
+          >
+            Pong
+          </router-link>
           <!-- Add more links here if needed -->
         </nav>
       </div>
