@@ -6,7 +6,7 @@
         <!-- Title -->
         <router-link
           to="/"
-          class="text-2xl sm:text-3xl font-bold text-white"
+          class="text-2xl sm:text-3xl font-bold text-white hover:underline"
         >
           Game Lab
         </router-link>
@@ -25,7 +25,7 @@
         >
           <router-link
             to="/about"
-            class="hover:underline hover:text-gray-200 transition"
+            class="hover:underline hover:text-gray-200 transition text-3xl font-bold"
           >
             About
           </router-link>
