@@ -4,9 +4,9 @@
 
 	  <p class="mb-6 leading-relaxed">
 		This project was created to see how many games I can create with Vue and still keep the bundle size low and performance high.
-		Initially, it was a small project running on a Jade server that sat in my repo for legit <strong>{{ yearsOld }}</strong> years.
+		Initially, it was a small project running on a express server that sat in my repo for legit <strong>{{ yearsOld }}</strong> years.
 		I'm not joking — I created this repository in <strong>{{ created.getFullYear() }}</strong> as part of a test for a company I briefly worked at.
-		There it sat, dormant, untouched.
+		There it sat, dormant, untouched waiting for this exact moment.
 	  </p>
 
 	  <p class="mb-6 leading-relaxed">
