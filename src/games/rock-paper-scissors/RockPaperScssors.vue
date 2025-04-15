@@ -36,7 +36,7 @@
   </template>
 
   <script setup>
-	import { useRPSGame } from '../composables/useRPSGame.js';
+	import { useRPSGame } from './useRPSGame.js';
 
 	const {
 		choices,
