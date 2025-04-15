@@ -24,6 +24,26 @@
   const canvas = ref(null);
   const score = ref(0);
 
+  // Touch move: follow finger (mobile)
+canvas.addEventListener("touchmove", (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const touch = e.touches[0];
+
+  // Convert screen touch X to canvas X
+  const touchX = touch.clientX - rect.left;
+
+  // Center paddle on touch point
+  paddleX = touchX - paddleWidth / 2;
+
+  // Clamp to canvas boundaries
+  if (paddleX < 0) paddleX = 0;
+  if (paddleX > width - paddleWidth) paddleX = width - paddleWidth;
+
+  // Prevent scrolling on mobile
+  e.preventDefault();
+}, { passive: false });
+
+
   onMounted(() => {
 	if (canvas.value) {
 	  initGame(canvas.value, score);
