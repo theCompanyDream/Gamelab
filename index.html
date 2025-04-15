@@ -3,31 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Room</title>
-    <meta
-    name="description"
-    content="A project where you can play different games"
-    />
-    <meta name="keywords" content="books,qohelet,search" />
-    <meta name="author" content="Timothy Brantley II" />
 
+    <!-- 🏷️ SEO Title + Description -->
+    <title>GameLab | Play Rock Paper Scissors & Tic Tac Toe in the Browser</title>
+    <meta name="description" content="Challenge your brain and reflexes with free, no-install games like Tic Tac Toe and Rock Paper Scissors. Built using Vue.js and designed for instant fun!" />
+    <meta name="keywords" content="play games online, tic tac toe, rock paper scissors, browser games, vue js games, game room, AI games, no download games" />
+    <meta name="author" content="Timothy Brantley II" />
+    <link rel="canonical" href="https://games.tbrantleyii.dev" />
+
+    <!-- 👀 Open Graph for Social Sharing (Discord, Facebook, etc.) -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Game Lab" />
-    <meta property="og:description" content="A project where you can play different games" />
+    <meta property="og:title" content="GameLab | Tic Tac Toe & Rock Paper Scissors Online" />
+    <meta property="og:description" content="GameLab is your free, fast, and fun game room in the browser. Play now — no downloads, just click and go!" />
     <meta property="og:image" content="https://games.tbrantleyii.dev/logo.png" />
     <meta property="og:url" content="https://games.tbrantleyii.dev" />
+    <meta property="og:site_name" content="GameLab" />
 
+    <!-- 🐦 Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Game Lab" />
-    <meta name="twitter:description" content="A project where you can play different games" />
+    <meta name="twitter:title" content="Play Tic Tac Toe & Rock Paper Scissors Online | GameLab" />
+    <meta name="twitter:description" content="Battle it out with Tic Tac Toe and Rock Paper Scissors directly in your browser. Powered by Vue, made for fun!" />
     <meta name="twitter:image" content="https://games.tbrantleyii.dev/logo.png" />
+    <meta name="twitter:creator" content="@yourTwitterHandle" />
 
-    <link rel="canonical" href="https://games.tbrantleyii.dev" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- 📱 Icons -->
+    <link rel="icon" type="image/png" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/logo.png" />
+
+    <!-- 🧠 Schema.org Structured Data (Optional but powerful) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "GameLab",
+        "url": "https://games.tbrantleyii.dev",
+        "description": "GameLab is a browser-based game room with classic games like Tic Tac Toe and Rock Paper Scissors. No downloads, instant fun.",
+        "creator": {
+          "@type": "Person",
+          "name": "Timothy Brantley II"
+        }
+      }
+    </script>
   </head>
   <body>
-    <section id="app"></section>
+    <main id="app"></main>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
