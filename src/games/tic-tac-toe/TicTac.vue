@@ -10,7 +10,7 @@
             >
                 {{ cell }}
             </div>
-            <button className="m-4 bg-purple-300 border-black" @click="resetGame">Reset</button>
+            <button className="m-4 p-2 bg-purple-300 border-black" @click="resetGame">Reset</button>
             <p v-if="winner">Winner: {{ winner }}</p>
             <p v-if="isDraw && !winner">It's a draw!</p>
         </section>
