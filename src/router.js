@@ -4,12 +4,17 @@ const routes = [
     {
         path: '/',
         name: 'TicTac',
-        component: () => import('./TicTac.vue'), // Lazy-loaded component
+        component: () => import('./games/tic-tac-toe/TicTac.vue'), // Lazy-loaded component
     },
     {
         path: '/rock',
         name: 'rockPaperScissors',
-        component: () => import('./RockPaperScssors.vue')
+        component: () => import('./games/rock-paper-scissors/RockPaperScssors.vue')
+    },
+    {
+        path: '/pong',
+        name: 'pong',
+        component: () => import('./games/pong/pong.vue')
     }
 ];
 
