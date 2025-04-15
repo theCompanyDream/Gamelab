@@ -12,7 +12,7 @@ export const games = [
 	  image: "/thumbs/rps.png"
 	},
 	{
-	  name: "Breakout",
+	  name: "Pong",
 	  slug: "pong",
 	  description: "Smash bricks with your paddle and ball.",
 	  image: "/thumbs/breakout.png"
