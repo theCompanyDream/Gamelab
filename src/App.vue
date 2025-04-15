@@ -3,30 +3,23 @@
     <header class="bg-red-500 text-white p-4">
       <div class="flex items-center justify-between">
         <!-- Left side: Title -->
-        <router-link to="/" class="text-3xl font-bold text-white">GameLab</router-link>
+        <router-link to="/" class="text-3xl font-bold text-white">Game Lab</router-link>
 
         <!-- Right side: Navigation -->
         <nav class="flex gap-4">
           <router-link
-            to="/rock"
+            to="/about"
             class="text-white hover:underline hover:text-gray-200 transition"
           >
-            Rock Paper Scissors
+            About
           </router-link>
-          <router-link
-            to="/pong"
-            class="text-white hover:underline hover:text-gray-200 transition"
-          >
-            Pong
-          </router-link>
-          <!-- Add more links here if needed -->
         </nav>
       </div>
     </header>
 
     <router-view />
 
-    <footer class="bg-gray-800 text-white p-4 text-center">
+    <footer class=" bg-gray-900 text-white p-4 text-center">
       &copy; 2024 GameLab. All rights reserved.
     </footer>
   </article>
