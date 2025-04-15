@@ -36,7 +36,7 @@
   </template>
 
   <script setup>
-	import { useRPSGame } from '../games/rock-paper-scissors/useRPSGame.js';
+	import { useRPSGame } from './useRPSGame.js';
 
 	const {
 		choices,
