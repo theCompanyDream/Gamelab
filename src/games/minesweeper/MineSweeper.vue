@@ -1,5 +1,5 @@
 <template>
-  <main class="max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-lg">
+  <main class="mx-auto p-6 bg-white rounded-xl shadow-lg">
     <!-- Game Header -->
     <header class="text-center mb-6">
       <h1 class="text-3xl font-bold mb-4">💣 Minesweeper</h1>
