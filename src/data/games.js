@@ -16,5 +16,11 @@ export const games = [
 	  slug: "pong",
 	  description: "Smash bricks with your paddle and ball.",
 	  image: "/games/pong.webp"
+	},
+	{
+	  name: "Minesweeper",
+	  slug: "minesweeper",
+	  description: "Uncover all safe squares without hitting a mine.",
+	  image: "/games/minesweeper.webp"
 	}
   ];
