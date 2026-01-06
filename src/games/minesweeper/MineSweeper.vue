@@ -2,13 +2,13 @@
   <main class="max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-lg">
     <!-- Game Header -->
     <header class="text-center mb-6">
-      <h1 class="text-3xl font-bold text-gray-800 mb-4">💣 Minesweeper</h1>
+      <h1 class="text-3xl font-bold mb-4">💣 Minesweeper</h1>
 
       <!-- Game Stats -->
       <div class="flex justify-between items-center bg-gray-100 rounded-lg p-4 mb-4">
         <div class="text-center">
           <div class="text-2xl font-mono font-bold text-red-600">💣 {{ minesLeft }}</div>
-          <div class="text-sm text-gray-600">Mines Left</div>
+          <div class="text-sm">Mines Left</div>
         </div>
 
         <div class="text-center">
@@ -22,7 +22,7 @@
 
         <div class="text-center">
           <div class="text-2xl font-mono font-bold text-blue-600">⏱️ {{ formatTime(timer) }}</div>
-          <div class="text-sm text-gray-600">Time</div>
+          <div class="text-sm">Time</div>
         </div>
       </div>
 
@@ -58,7 +58,6 @@
       :style="{
         display: 'grid',
         gridTemplateColumns: `repeat(${cols}, 1fr)`,
-        gap: '1px'
       }"
     >
       <div
@@ -74,7 +73,7 @@
     </section>
 
     <!-- Instructions -->
-    <section class="mt-6 text-sm text-gray-600 text-center">
+    <section class="mt-6 text-sm text-center">
       <p><strong>Left click:</strong> Reveal cell | <strong>Right click:</strong> Flag/unflag</p>
       <p>Find all cells without mines to win!</p>
     </section>
@@ -88,7 +87,7 @@
         <h2 class="text-2xl font-bold mb-4">
           {{ gameStatus === 'won' ? 'You Won!' : 'Game Over!' }}
         </h2>
-        <p class="text-gray-600 mb-6">
+        <p class="mb-6">
           Time: {{ formatTime(timer) }}
         </p>
         <button
