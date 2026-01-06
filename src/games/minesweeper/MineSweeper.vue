@@ -54,10 +54,11 @@
 
     <!-- Game Board -->
     <section
-      class="inline-block bg-gray-300 p-2 rounded-lg mx-auto"
+      class="inline-block bg-gray-300 rounded-lg mx-auto"
       :style="{
         display: 'grid',
-        gridTemplateColumns: `repeat(${cols}, 1fr)`,
+        gridTemplateColumns: `repeat(${cols}, auto)`,
+        width: `${cols * 24}px`,
       }"
     >
       <div
