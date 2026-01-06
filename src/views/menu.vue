@@ -8,10 +8,14 @@
 		  class="group relative block rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 bg-gray-800"
 		>
 		  <img
+		  	v-if="game.image != undefined"
 			:src="game.image"
 			:alt="game.name"
 			class="w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition"
 		  />
+		  <div v-else class="w-full h-60 flex items-center justify-center text-6xl">
+			{{ game.emoji }}
+		  </div>
 		  <div class="p-4">
 			<h2 class="text-xl font-semibold">{{ game.name }}</h2>
 		  </div>

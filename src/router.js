@@ -25,6 +25,11 @@ const routes = [
         path: '/play/pong',
         name: 'pong',
         component: () => import('@/games/pong/pong.vue')
+    },
+    {
+        path: '/play/minesweeper',
+        name: 'minesweeper',
+        component: () => import('@/games/minesweeper/MineSweeper.vue')
     }
 ];
 

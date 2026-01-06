@@ -1,5 +1,5 @@
 <template>
-  <article class="flex flex-col min-h-screen justify-between bg-gray-100">
+  <article class="flex flex-col min-h-screen justify-between">
     <!-- Header -->
     <header class="bg-red-500 text-white px-4 py-3">
       <div class="flex flex-wrap items-center justify-between max-w-7xl mx-auto">
@@ -21,11 +21,11 @@
 
         <!-- Desktop Nav -->
         <nav
-          class="hidden sm:flex gap-4"
+          class="hidden visible lg:flex gap-4"
         >
           <router-link
             to="/about"
-            class="hover:underline hover:text-gray-200 transition text-3xl font-bold"
+            class="hover:underline hover:text-blue-500 transition text-3xl font-bold"
           >
             About
           </router-link>
@@ -36,7 +36,7 @@
           <nav class="flex flex-col gap-2">
             <router-link
               to="/about"
-              class="hover:underline hover:text-gray-200 transition"
+              class="hover:underline hover:text-blue-500 transition"
               @click="menuOpen = false"
             >
               About
@@ -50,7 +50,7 @@
     <router-view class="flex-1" />
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white p-4 text-center">
+    <footer class="bg-indigo-900 text-white p-4 text-center">
       &copy; 2024 GameLab. All rights reserved.
     </footer>
     <SpeedInsights />
@@ -64,7 +64,3 @@ import { SpeedInsights } from '@vercel/speed-insights/vue';
 import { Analytics } from '@vercel/analytics/vue'
 const menuOpen = ref(false);
 </script>
-
-<style scoped>
-@import './assets/main.css';
-</style>
