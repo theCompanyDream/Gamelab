@@ -21,6 +21,6 @@ export const games = [
 	  name: "Minesweeper",
 	  slug: "minesweeper",
 	  description: "Uncover all safe squares without hitting a mine.",
-	  image: "/games/minesweeper.webp"
+	  emoji: "💣"
 	}
   ];
