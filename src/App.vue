@@ -21,7 +21,7 @@
 
         <!-- Desktop Nav -->
         <nav
-          class="sm:hidden visible lg:flex gap-4"
+          class="hidden visible lg:flex gap-4"
         >
           <router-link
             to="/about"
