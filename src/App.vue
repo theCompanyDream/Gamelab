@@ -21,7 +21,7 @@
 
         <!-- Desktop Nav -->
         <nav
-          class="hidden sm:flex gap-4"
+          class="sm:hidden visible lg:flex gap-4"
         >
           <router-link
             to="/about"
@@ -64,7 +64,3 @@ import { SpeedInsights } from '@vercel/speed-insights/vue';
 import { Analytics } from '@vercel/analytics/vue'
 const menuOpen = ref(false);
 </script>
-
-<style scoped>
-@import './assets/main.css';
-</style>
