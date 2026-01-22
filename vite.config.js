@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
 import { fileURLToPath, URL } from 'node:url';
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
@@ -7,7 +8,8 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [
     vue(),
-    tailwindcss()
+    tailwindcss(),
+    VitePWA({ registerType: 'autoUpdate' })
   ],
   resolve: {
     alias: {
